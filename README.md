@@ -61,6 +61,10 @@ A Spotify-styled web application where users can:
 ![Spotify UI](screenshots/spotify-ui.png)
 ![Download Simulation](screenshots/spotify-download.png)
 
+## 🌐 Live Demo
+Spotify Downloader Project:  
+👉 https://asmita-username.github.io/QSkill-Basic-Web-Development-Projects/
+
 ---
 
 ## 👩‍💻 Developed By
