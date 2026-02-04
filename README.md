@@ -63,8 +63,8 @@ A Spotify-styled web application where users can:
 
 ## 🌐 Live Demo
 Spotify Downloader Project:  
-👉 https://asmita-username.github.io/QSkill-Basic-Web-Development-Projects/
-
+👉[ https://asmita-username.github.io/QSkill-Basic-Web-Development-Projects/
+](https://asmitav9.github.io/QSkill-Basic-Web-Development-Projects/)
 ---
 
 ## 👩‍💻 Developed By
