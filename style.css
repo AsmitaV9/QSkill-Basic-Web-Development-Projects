@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #1db954,
+    #1ed760,
+    #0f9b4f
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bgMove 6s ease-in-out infinite alternate;
+}
+
+/* Background animation */
+@keyframes bgMove {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+/* Main Card */
+.container {
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  width: 360px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  color: #1db954;
+  letter-spacing: 1px;
+}
+
+/* Input field */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 18px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.5);
+  transform: scale(1.02);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #1db954, #1ed760);
+  color: #121212;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(29, 185, 84, 0.6);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Result text */
+#result {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #dfffe9;
+  min-height: 20px;
+}
+
+/* Small footer text (optional) */
+.footer {
+  margin-top: 12px;
+  font-size: 11px;
+  opacity: 0.7;
+}

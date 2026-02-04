@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login & Signup Project</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #89f7fe, #66a6ff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    width: 360px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #43a047;
+}
+
+.alt-btn {
+    background: #2196F3;
+}
+
+.alt-btn:hover {
+    background: #1e88e5;
+}
+
+.hidden {
+    display: none;
+}
+
+.success h1 {
+    color: #4CAF50;
+    animation: pop 1s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HOME -->
+<div class="container" id="home">
+    <h2>Welcome 👋</h2>
+    <button onclick="showLogin()">Login</button>
+    <button class="alt-btn" onclick="showSignup()">Sign Up</button>
+</div>
+
+<!-- SIGNUP -->
+<div class="container hidden" id="signup">
+    <h2>Create Account</h2>
+    <input type="text" id="suUser" placeholder="Username">
+    <input type="password" id="suPass" placeholder="Password">
+    <input type="password" id="suConfirm" placeholder="Confirm Password">
+    <button onclick="signup()">Sign Up</button>
+</div>
+
+<!-- LOGIN -->
+<div class="container hidden" id="login">
+    <h2>Login</h2>
+    <input type="text" id="liUser" placeholder="Username">
+    <input type="password" id="liPass" placeholder="Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- SUCCESS -->
+<div class="container hidden success" id="success">
+    <h1>🎉 Congratulations! 🎉</h1>
+    <p>You have successfully logged in.</p>
+</div>
+
+<script>
+let savedUsername = "";
+let savedPassword = "";
+
+function hideAll() {
+    document.querySelectorAll(".container").forEach(div => {
+        div.classList.add("hidden");
+    });
+}
+
+function showSignup() {
+    hideAll();
+    document.getElementById("signup").classList.remove("hidden");
+}
+
+function showLogin() {
+    hideAll();
+    document.getElementById("login").classList.remove("hidden");
+}
+
+function signup() {
+    let u = suUser.value;
+    let p = suPass.value;
+    let c = suConfirm.value;
+
+    if (u === "" || p === "" || c === "") {
+        alert("❌ All fields are required");
+        return;
+    }
+
+    if (p.length < 6) {
+        alert("❌ Password must be at least 6 characters long");
+        return;
+    }
+
+    if (p !== c) {
+        alert("❌ Passwords do not match");
+        return;
+    }
+
+    savedUsername = u;
+    savedPassword = p;
+
+    alert("✅ Account created successfully! Please login.");
+    showLogin();
+}
+
+function login() {
+    let u = liUser.value;
+    let p = liPass.value;
+
+    if (savedUsername === "") {
+        alert("❌ Account not found. Please sign up first.");
+        showSignup();   // ✅ Redirect after alert
+        return;
+    }
+
+    if (u !== savedUsername || p !== savedPassword) {
+        alert("❌ Invalid username or password");
+        return;
+    }
+
+    hideAll();
+    document.getElementById("success").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
