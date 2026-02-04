@@ -50,6 +50,17 @@ A Spotify-styled web application where users can:
 - **Organization:** QSkill
 - **Domain:** Basic Web Development
 
+## 📸 Project Screenshots
+
+### Login & Signup Application
+![Login](screenshots/login.png)
+![Signup](screenshots/signup.png)
+![Success](screenshots/success.png)
+
+### Spotify Downloader Application
+![Spotify UI](screenshots/spotify-ui.png)
+![Download Simulation](screenshots/spotify-download.png)
+
 ---
 
 ## 👩‍💻 Developed By
